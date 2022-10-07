@@ -16,7 +16,7 @@ public class TaskDto {
     private Long id;
     private String header;
     private String description;
-    private LocalDateTime DoDateTime;
-    private User user;
+    private LocalDateTime do_date_time;
+    private Long user_id;
     private String state;
 }

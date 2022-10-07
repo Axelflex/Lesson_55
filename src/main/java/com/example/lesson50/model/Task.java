@@ -15,7 +15,7 @@ public class Task {
     private Long id;
     private String header;
     private String description;
-    private LocalDateTime DoDateTime;
-    private User user;
+    private LocalDateTime do_date_time;
+    private User user_id;
     private String state;
 }

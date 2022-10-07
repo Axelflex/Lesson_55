@@ -19,7 +19,7 @@ public class TaskService {
         return taskDao.getAllTasks().stream()
                 .map(event -> TaskDto.builder()
                         .id(event.getId())
-                        .DoDateTime(event.getDoDateTime())
+                        .do_date_time(event.getDo_date_time())
                         .header(event.getHeader())
                         .state(event.getState())
                         .build())
