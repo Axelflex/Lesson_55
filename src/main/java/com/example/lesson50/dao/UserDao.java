@@ -21,20 +21,9 @@ public class UserDao {
         jdbcTemplate.update(query);
     }
 
-    public void save (User user) {
+    public void save (String email, String username, String password) {
         String sql = "insert into users (email, username, password, enabled) " +
                 "values (?, ?, ?, true);";
-        jdbcTemplate.update(sql, user.getEmail(), user.getUsername(), user.getPassword());
-    }
-    public Optional<Task> getAllTasks(){
-        String sql = "selec * from tasks;";
-        return Optional.ofNullable(jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Task.class)));
-    }
-
-    public String createTask(String header, String description, LocalDateTime DoDateTime){
-        String sql = "insert into tasks(header, description, DoDateTime) " +
-                "values (?, ?, ?);";
-        jdbcTemplate.update(sql, header, description, DoDateTime);
-        return "Task have been created";
+        jdbcTemplate.update(sql, email, username, password);
     }
 }

@@ -15,10 +15,8 @@ import java.util.stream.Collectors;
 public class TaskService {
     private final TaskDao taskDao;
 
-    private final UserDao userDao;
-
     public List<TaskDto> getTasks(){
-        return userDao.getAllTasks().stream()
+        return taskDao.getAllTasks().stream()
                 .map(event -> TaskDto.builder()
                         .id(event.getId())
                         .DoDateTime(event.getDoDateTime())

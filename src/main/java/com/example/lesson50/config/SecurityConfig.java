@@ -40,8 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/users/getTasks").fullyAuthenticated()
-                .antMatchers("/users/createTask").fullyAuthenticated();
+                .antMatchers("/tasks").fullyAuthenticated();
         http.authorizeRequests()
                 .anyRequest()
                 .permitAll();
